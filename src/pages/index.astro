@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TextSection from '../components/TextSection.astro';
+import ColorsSection from '../components/ColorsSection.svelte';
+import { colors } from '../fixtures/colors';
+---
+
+<Layout>
+  <TextSection title="About">
+    <p>
+      Hexadecimal color values can be described using only three characters.
+      It’s elegant and easy to understand but not every color can be represented
+      this way — we are left with the total of 4096 colors to choose from. It’s
+      more than enough for most cases. By the way{' '}
+      <a
+        href="https://google.github.io/styleguide/htmlcssguide.html#Hexadecimal_Notation"
+      >
+        Google engineers recommend
+      </a>{' '}
+      using shorter syntax when possible. So, when in doubt — it’s better to use
+      a three-character notation.
+    </p>
+    <p>
+      Minimize your web application bandwidth by using only 3 characters for
+      colors and make the world a better place. Three bytes at a time.
+    </p>
+
+    <p>
+      Colors are sorted by luminosity. Click the color to copy hex value to your
+      clipboard.
+    </p>
+  </TextSection>
+  <ColorsSection colors={colors} client:load />
+</Layout>
+
+<style lang="scss">
+  p {
+    font-size: 1rem;
+    max-width: 60ch;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    &:last-child() {
+      margin: 0;
+    }
+  }
+</style>
