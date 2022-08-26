@@ -1,11 +1,11 @@
 {
-  "name": "t-hex",
+  "name": "three-hex",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "npm i -g pnpm && pnpm i && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
